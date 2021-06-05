@@ -13,3 +13,7 @@ def news(news_id):
     # function that returns the news details page and its data
 
     return render_template('news.html', id = news_id)
+def index():
+    # function that returns the index page and its data
+    title = 'Home - Welcome to The News Website Online'
+    return render_template('index.html',title = title)
