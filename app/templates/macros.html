@@ -3,11 +3,13 @@
 
 {%for new in news_list%}
 <div class="col-xs-12  col-sm-4 col-md-2 col-lg-2 new-card">
-    <img src="{{new.urlToImage}}" alt="{{new.title}}  url" class="img-responsive">
     <li class="text-center">
+        <p>{{new.name}}</p>
         <a href="/new/{{new.id}}">
             {{new.title|truncate(10)}} </a>
 
+
+            
 
     </li>
 
