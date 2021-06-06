@@ -1,16 +1,11 @@
+
 {%extends  'base.html'%}
 <!--Content block-->
 {%block content%}
 <div class="container">
-    <!--Poster background-->
-    <div class="col-xs-6 col-sm-6 col-md-6  col-lg-6  url">
-    <img src="{{new.urlToImage}}" alt="">
-    </div>
- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 new-details">
-     <h3> {{new.title}}</h3>
-     <p class="overview">{{new.overview}}</p>
-     
-
- </div>
+ {% for article in new%}
+ <p>{{article.author}}</p>
+  <img src="{{article.UrlToImage}}">
+ {%endfor%}
 </div>
 {%endblock%}

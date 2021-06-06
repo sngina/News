@@ -4,6 +4,7 @@ from .models import news
 
 
 News = news.News
+Article = news.Article
 # Getting the api key
 
 api_key = app.config['NEWS_API_KEY']
@@ -49,15 +50,18 @@ def process_results(news_list):
     return news_results
 
 def get_new(id):
-    get_new_url = base_url.format(api_key)
+    get_new_url = base_url.format(id,api_key)
 
     with urllib.request.urlopen(get_new_url) as url:
         news_details_data =url.read()
         news_details_response = json.loads(news_details_data)
-
-        news_object = None
         
-        return news_object
+        news_object = None
+    if news_details_response['articles']:
+        news_article = news_details_response['articles']
+        news_object = process_article(news_article)
+        
+    return news_object
 def process_article(news_article):
     process_article_list = []
 
@@ -70,5 +74,8 @@ def process_article(news_article):
         content = news_details_response.get('content')
         urlToImage = news_details_response.get('urlToImage')
 
-        news_object = News(author,url,title,description,publishedAt,content,urlToImage,)
+        news_object = Article(author,url,title,description,publishedAt,content,urlToImage,)
+        process_article_list.append(news_object)
+
+    return process_article_list
 
