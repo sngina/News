@@ -40,4 +40,20 @@ def process_results(news_list):
         news_object = News(id,author,title, description,publishedAt,content)
         news_results.append(news_object)
     return news_results
+def get_news(id):
+    get_news_url = base_url.format(id,api_key)
 
+    with urllib.request.urlopen(get_news_url) as url:
+        news_details_data =url.read()
+        news_details_response = json.loads(news_details_data)
+
+        news_object = None
+        if news_details_response:
+            id = news_details_response.get('id')
+            title = news_details_response.get('original_title')
+            description = news_details_response.get('description')
+            publishedAt = news_details_response.get('publishedAt')
+            content = news_details_response.get('content')
+
+            news_object = News(id,title,description,publishedAt,content)
+        return news_object
