@@ -35,9 +35,11 @@ def process_results(news_list):
         description = news_item.get('description')
         publishedAt = news_item.get('publishedAt')
         content = news_item.get('content')
+        url = news_item.get('url')
+        urlToImage = news_item.get('urlToImage')
 
     
-        news_object = News(id,author,title, description,publishedAt,content)
+        news_object = News(id,author,title, description,publishedAt,content,url,urlToImage)
         news_results.append(news_object)
     return news_results
 def get_new(id):
@@ -50,10 +52,12 @@ def get_new(id):
         news_object = None
         if news_details_response:
             id = news_details_response.get('id')
+            url = news_details_response.get('url')
             title = news_details_response.get('original_title')
             description = news_details_response.get('description')
             publishedAt = news_details_response.get('publishedAt')
             content = news_details_response.get('content')
+            urlToImage = news_details_response.get('urlToImage')
 
-            news_object = News(id,title,description,publishedAt,content)
+            news_object = News(id,title,description,publishedAt,content,url,urlToImage)
         return news_object
