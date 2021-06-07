@@ -13,7 +13,7 @@ This is an Application created for anyone to use to view news of what is happeni
 ## Access the website
 Need the latest browser to be able to View
 
-Follow this link
+Follow this link 'https://news-moringa.herokuapp.com/'
 
 It is hosted by heroku
 
