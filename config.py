@@ -1,4 +1,5 @@
-from instance.config import NEWS_API_KEY
+import os
+# from instance.config import NEWS_API_KEY
 
 
 class Config:
@@ -29,3 +30,9 @@ class DevConfig(Config):
     '''
 
     DEBUG = True
+
+    
+config_options = {
+'development':DevConfig,
+'production':ProdConfig
+}
