@@ -1,12 +1,19 @@
- ul li{
-    list-style: none;
+ ul li {
+     list-style: none;
+
+ }
+
+ .news {
+     background-color: beige;
+ }
+
+ .mtv {
+     box-shadow: 0 0 3px gray;
+     padding: 60px;
+
+ }
+
+ img {
+     width:75%;
     
-}
-.news{
-    background-color:beige;
-}
-.mtv{
-    box-shadow: 0 0 3px gray;
-    padding: 60px;
-    
-}
+ }

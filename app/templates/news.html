@@ -9,15 +9,16 @@
   <link rel = "stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
 
   {%endblock%}
-  
+
 <div class="container news">
  {% for article in new%}
  <div class="card" style="width: 18rem;">
  <p>{{article.author}}</p>
-  <img src="{{article.UrlToImage}}">
+  <img src="{{article.UrlToImage}}" class="img-responsive">
   <p>{{article.description}}</p>
-  <p>{{publishedAt}}</p>
-  <p>{{content}}</p>
+  <p>{{article.publishedAt}}</p>
+  <!-- <p>{{article.content}}</p> -->
+  <a class="btn btn-primary" href="{{article.url}}" role="button">View Article</a>
 </div>
  {%endfor%}
 
