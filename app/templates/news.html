@@ -3,6 +3,13 @@
 <!--Content block-->
 {%block content%}
 
+<!--Styles block-->
+{%block styles%}
+  {{super()}}
+  <link rel = "stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+
+  {%endblock%}
+  
 <div class="container news">
  {% for article in new%}
  <div class="card" style="width: 18rem;">

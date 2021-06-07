@@ -3,5 +3,10 @@
     
 }
 .news{
-    background-color:whitesmoke;
+    background-color:beige;
+}
+.mtv{
+    box-shadow: 0 0 3px gray;
+    padding: 60px;
+    
 }

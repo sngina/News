@@ -11,9 +11,13 @@ def index():
   #getting trending news
   trending_news = get_news('entertainment')
   now_showing_news = get_news('business')
-  print(trending_news[0].name)
+  general = get_news ('general')
+  sports = get_news('sports')
+  health = get_news('health')
+  technology = get_news('technology')
+
   title = 'Home -Welcome to the News Website Online'
-  return render_template('index.html', title = title, trending = trending_news, now_showing = now_showing_news)
+  return render_template('index.html', title = title, trending = trending_news, now_showing = now_showing_news , general = general , sports = sports, health = health,  technology = technology)
 
 
 

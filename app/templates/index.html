@@ -1,26 +1,54 @@
 {%extends 'base.html'%}
 {%import 'macros.html' as macro%}
-<!--Styles block-->
-{%block styles%}
-  {{super()}}
-  <link rel = "stylesheet" href="{{url_for('static', filename = 'css/index.css')}}">
 
-  {%endblock%}
 <!--Content block-->
- 
- {%block content%}
-    
-    
-        <!--Trending news-->
-        <h3>Trending News</h3>
-        <div class=" card">
-            {{macro.displayNewsList(trending)}}
-            
-        </div>
-        <!--Now showing news-->
-        <h3>Now showing</h3>
-        <div class="card">
-            {{macro.displayNewsList(now_showing)}}
-        </div>
-        
- {%endblock%}   
+
+
+
+{%block content%}
+<!--Styles block-->
+
+{%block styles%}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+
+{%endblock%}
+
+<!--Trending news-->
+
+<div class="mtv">
+  <h3>Trending News</h3>
+  {{macro.displayNewsList(trending)}}
+
+</div>
+<!--Now showing news-->
+<h3>Now showing</h3>
+<div class="mtv">
+  {{macro.displayNewsList(now_showing)}}
+</div>
+
+<div class="mtv">
+  <h3>General</h3>
+  {{macro.displayNewsList(general)}}
+
+</div>
+
+<div class="mtv">
+  <h3>Sports</h3>
+  {{macro.displayNewsList(sports)}}
+
+</div>
+
+<div class="mtv">
+  <h3>Health</h3>
+  {{macro.displayNewsList(health)}}
+
+</div>
+<div class="mtv">
+  <h3>Technology</h3>
+  {{macro.displayNewsList(technology)}}
+
+</div>
+
+
+{%endblock%}
