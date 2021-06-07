@@ -5,11 +5,14 @@
 
 <div class="container news">
  {% for article in new%}
+ <div class="card" style="width: 18rem;">
  <p>{{article.author}}</p>
   <img src="{{article.UrlToImage}}">
   <p>{{article.description}}</p>
   <p>{{publishedAt}}</p>
   <p>{{content}}</p>
+</div>
  {%endfor%}
+
 </div>
 {%endblock%}

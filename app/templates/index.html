@@ -13,14 +13,14 @@
     
         <!--Trending news-->
         <h3>Trending News</h3>
-        <ul>
+        <div class=" card">
             {{macro.displayNewsList(trending)}}
             
-        </ul>
+        </div>
         <!--Now showing news-->
         <h3>Now showing</h3>
-        <ul>
+        <div class="card">
             {{macro.displayNewsList(now_showing)}}
-        </ul>
+        </div>
         
  {%endblock%}   
