@@ -1,19 +1,23 @@
-from app import app
 import urllib.request, json
-from .models import news
+from .models import News , Article
 
 
-News = news.News
-Article = news.Article
+
 # Getting the api key
 
-api_key = app.config['NEWS_API_KEY']
+api_key = None
 
 #getting the news base url
-base_url = app.config["NEWS_BASE_URL"]
+base_url = None
 
 # getting the category 
-category_url = app.config["CATEGORY_URL"]
+category_url = None
+
+def configure_response(app):
+    global api_key,base_url,category_url
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config ['NEWS_BASE_URL']
+    category_url = app.config ['CATEGORY_URL']
 
 
 def get_news(source):
