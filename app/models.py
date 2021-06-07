@@ -1,4 +1,3 @@
-
 class News:
     # news class to define the news objects.
     def __init__(self,id,name,description,url,category,language):
